@@ -2,14 +2,17 @@
 #include <bits/stdc++.h>
 using namespace std;
 
- int containerWithMostWater(int &a){
+ int containerWithMostWater(vector<int> &a){
  	int i=0,j=a.size()-1;
  	int area = 0;
  	while(i<j){
  		int mn = min(a[i],a[j]);
  		int temp = (j-i)*mn;
- 		
+ 		area = max(area,temp);
+ 		if(a[i]==mn) i++;
+ 		else j--;
  	}
+ 	return area;
  }
 
 int main(){
@@ -20,7 +23,7 @@ int main(){
 		int x;cin>>x;
 		a.push_back(x);
 	}
-	auto res = containerWithMostWater(a);
-	for(auto &e: res) cout<<e<<endl;
+	int res = containerWithMostWater(a);
+	cout<<res;
 	return 0;
 }
