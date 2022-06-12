@@ -20,7 +20,7 @@ int main(){
 	cin>>n>>k;
 	vector<vector<int>> a;
 	for(int i=0;i<n;i++){
-		vector<int> temp;
+		   vector<int> temp;
 		for(int j=0;j<2;j++){
 			int k;
 			cin>>k;
